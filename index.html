@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>かわさき BENTO MAP</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+            integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+            crossorigin=""></script>
+
+    <!--
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.71.1/dist/L.Control.Locate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.71.1/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+<ons-navigator id="appNavigator" swipeable swipe-target-width="80px">
+    <ons-page>
+        <ons-splitter id="appSplitter">
+            <ons-splitter-side id="sidemenu" page="sidemenu.html" swipeable side="right" collapse="" width="260px"></ons-splitter-side>
+            <ons-splitter-content page="tabbar.html"></ons-splitter-content>
+        </ons-splitter>
+    </ons-page>
+</ons-navigator>
+
+<ons-template id="tabbar.html">
+<ons-page>
+    <ons-toolbar>
+        <div class="center" id="toolbar-title">かわさき BENTO MAP</div>
+        <div class="right">
+            <ons-toolbar-button onclick="fn.toggleMenu()">
+                <ons-icon icon="fa-bars"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <ons-tabbar position="bottom" animation="none">
+        <ons-tab label="ホーム" icon="fa-home" page="home.html" active>
+        </ons-tab>
+        <ons-tab label="お店を探す" icon="fa-list" page="list.html">
+        </ons-tab>
+        <ons-tab label="マップ" icon="fa-map" active-icon="fa-map-o" page="map.html">
+        </ons-tab>
+        <ons-tab label="お店の登録" icon="fa-cog" active-icon="fa-cogs" page="form.html">
+        </ons-tab>
+        <ons-tab label="アプリについて" icon="fa-info" page="about.html">
+        </ons-tab>
+    </ons-tabbar>
+</ons-page>
+</ons-template>
+
+<script src="app.js"></script>
+
+</body>
+</html>
